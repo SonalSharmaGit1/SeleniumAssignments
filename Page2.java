@@ -37,8 +37,6 @@ public class Page2 {
 		WebElement AdvertisementBanner2 = driver.findElement(By.xpath("//div[@id='survey_page']"));
 		
 		
-		//String Identification
-		
 		driver.close();
 
 }
