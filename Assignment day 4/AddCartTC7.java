@@ -21,6 +21,7 @@ public class AddCartTC7 {
 		PageFactory.initElements(driver, this);	
 	}	
 	
+	WebElement featuresItemsText= driver.findElement(By.xpath("//h2[contains(text(),'Features Items')]"));
 	WebElement productButton= driver.findElement(By.xpath("//a[@href=\"/products\"]")); 
 	WebElement AddtocartProduct1= driver.findElement(By.xpath("(//div[@class='productinfo text-center'][1]/a)[1]"));
 	WebElement continueButton= driver.findElement(By.xpath("//button[contains(text(),'Continue Shopping')]"));
@@ -39,6 +40,12 @@ public class AddCartTC7 {
 		driver.get("https://automationexercise.com/category_products/6");
 	}
 	
+	public void verifyHomepage() {
+		if(featuresItemsText.equals("Features Items"))
+		{
+			System.out.println("User has entered Homepage");
+		}
+	}
 	public void clickProductsButton() {
 		productButton.click();
 	}
@@ -109,6 +116,7 @@ public class AddCartTC7 {
 	@Test
 	public void addToCart() throws InterruptedException {
 		navigation();
+		verifyHomepage();
 		clickProductsButton();
 		addProduct1();
 		continueButton();

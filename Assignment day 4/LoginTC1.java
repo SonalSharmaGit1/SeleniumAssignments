@@ -19,6 +19,7 @@ public class LoginTC1 {
 		PageFactory.initElements(driver, this);	
 	}	
 	
+	WebElement featuresItemsText= driver.findElement(By.xpath("//h2[contains(text(),'Features Items')]"));
 	WebElement emailLogin=driver.findElement(By.xpath("//input[@data-qa=\"login-email\"]")); //login email
 	WebElement passwordLogin=driver.findElement(By.xpath("//input[@data-qa=\"login-password\"]")); //login password
 	WebElement loginButton=driver.findElement(By.xpath("//button[contains(text(),'Login')]")); //Login button
@@ -31,6 +32,12 @@ public class LoginTC1 {
 		driver.get("https://automationexercise.com/category_products/6");
 	}
 	
+	public void verifyHomepage() {
+		if(featuresItemsText.equals("Features Items"))
+		{
+			System.out.println("User has entered Homepage");
+		}
+	}	
 	public void clickLoginSignupButton() {
 		SignupLogin.click();
 	}
@@ -77,6 +84,7 @@ public class LoginTC1 {
 	@Test
 	public void loginToSite() throws InterruptedException {
 		navigation();
+		verifyHomepage();
 		clickLoginSignupButton();
 		verifyLoginText();
 		setLoginEmail();

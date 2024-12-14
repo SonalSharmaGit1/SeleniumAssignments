@@ -21,6 +21,7 @@ public class ContactUsTC6 {
 		PageFactory.initElements(driver, this);	
 	}	
 
+	WebElement featuresItemsText= driver.findElement(By.xpath("//h2[contains(text(),'Features Items')]")); 
 	WebElement contactUsButton= driver.findElement(By.xpath("//a[contains(text(),' Contact us') and @href=\"/contact_us\"]"));
 	WebElement ContactUsText = driver.findElement(By.xpath("//h2[contains(text(),'Contact ')]"));
 	WebElement getInTouchText=driver.findElement(By.xpath("//h2[contains(text(), 'Get In Touch') and @class=\"title text-center\"]")); // SignUp name
@@ -34,6 +35,13 @@ public class ContactUsTC6 {
 	public void navigation() throws InterruptedException {
 		driver.get("https://automationexercise.com/category_products/6");
 	}
+	public void verifyHomepage() {
+		if(featuresItemsText.equals("Features Items"))
+		{
+			System.out.println("User has entered Homepage");
+		}
+	}
+	
 	public void clickContactUsButton() {
 		contactUsButton.click();
 	}
@@ -81,6 +89,7 @@ public class ContactUsTC6 {
 	@Test
 	public void SubmitFeedback() throws InterruptedException {
 		navigation();
+		verifyHomepage();
 		clickContactUsButton();
 		verifyContactUsText();
 		verifygetInTouchText();
