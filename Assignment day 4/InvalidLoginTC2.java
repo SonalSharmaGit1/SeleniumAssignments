@@ -73,7 +73,7 @@ public class InvalidLoginTC2 {
 	}
 
 	@Test
-	public void logoutOfSite() throws InterruptedException {
+	public void invalidLoginToSite() throws InterruptedException {
 		navigation();
 		clickLoginSignupButton();
 		verifyLoginText();

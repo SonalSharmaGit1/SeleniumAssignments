@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 
 import DriverInit.DriverStart;
 
@@ -165,6 +166,39 @@ public class SignupTC4 {
 		driver.close();
 	}
 	
+	@Test
+	public void signupWithNewEmail() throws InterruptedException {
+		navigation();
+		clickLoginSignupButton();
+		verifySignupText();
+		setSignupName();
+		setSignupEmail();
+		clickSignupButton();
+		verifyAccountInfo();
+		selectTitle();
+		setAccountName();
+		setAccountEmail();
+		setAccountPassword();
+		selectDOBDay();
+		selectDOBMonth();
+		selectDOBYear();
+		selectCheckboxNewsletter();
+		selectCheckboxOffers();
+		verifyAddressInfoTitle();
+		setAccountFirstName();
+		setAccountLastName();
+		setCompany();
+		setAddress1();
+		setAddress2();
+		selectCountry();
+		setState();
+		setCity();
+		setZipcode();
+		setMobileNo();
+		clickCreateAccountButton();
+		driverClose();		
+		
+		}
 }
 	
 
